@@ -283,10 +283,6 @@ body {
 
 #template-examples {
 
-	@include media(4) {
-		font-size: 85%;
-	}
-
 	h1 {
 		font-size: 4em;
 
@@ -328,10 +324,18 @@ body {
 		font-size: 3.5em;
 		color: #0977bc;
 		margin-bottom: 0;
+
+		@include media(4) {
+			font-size: 2.5em;
+		}		
 	}
 
 	.content {
 		font-weight: bold;	
+
+		@include media(4) {
+			font-size: 85%;
+		}		
 	}
 
 	.evenrow {

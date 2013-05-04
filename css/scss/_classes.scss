@@ -448,22 +448,20 @@ blockquote {
 
 .bubble {
 	background: #ffffff url(../images/icons/quotes_start.png) 15px 15px no-repeat;
-	@include box-shadow(0 2px 3px #65696b);
+	@include box-shadow(0 2px 5px #65696b);
 	padding: 2em 4.5em;
 	@include border-radius(3em);
 	position: relative;
 	margin-top: 5em;
 
 	&:before {
-		content: '';
-	    border-bottom: 3em solid #FFF;
-	    border-left: 0 solid transparent;
-	    border-right: 3em solid transparent;
-	    height: 0;
-	    width: 0;		
-	    position: absolute;
+    	background: url("../images/misc/speech_bubble.png") no-repeat scroll left top transparent;		
+	    content: "";
+	    height: 2.2em;
 	    left: 10%;
-	    top: -3em;
+	    position: absolute;
+	    top: -2.2em;
+	    width: 2.5em;
 	};
 
 	&:after {
@@ -481,6 +479,10 @@ blockquote {
 		font-size: 1.4em;
 		color: #0977bc;
 		margin-bottom: 0;
+
+		@include media(4) {
+			font-size: 1.2em;
+		}
 	}
 
 	small {
