@@ -293,26 +293,21 @@ body {
 
 	.navigation {
 		padding: 6.5em 0;
-		background: #1891cf;
-		background: -moz-linear-gradient(45deg,  #1891cf 0%, #24a9e0 100%); 
-		background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1891cf), color-stop(100%,#24a9e0));
-		background: -webkit-linear-gradient(45deg,  #1891cf 0%,#24a9e0 100%);
-		background: -o-linear-gradient(45deg,  #1891cf 0%,#24a9e0 100%); 
-		background: -ms-linear-gradient(45deg,  #1891cf 0%,#24a9e0 100%); 
-		background: linear-gradient(45deg,  #1891cf 0%,#24a9e0 100%); 
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1891cf', endColorstr='#24a9e0',GradientType=1 ); 
+		background-color: #1891cf; // Old browsers
+		@include filter-gradient(#1891cf, #1891cf, horizontal); // IE6-9 fallback on horizontal gradient
+		@include background-image(linear-gradient(left bottom,  #1891cf 0%,#1891cf 100%));
+
 
 		.scroll-to-btn {
-			@include inline-block;
 			font-size: 1.4em;
+			@include inline-block;			
 			@include GothamBook;
+			@include border-radius(2em);
 			color: #FFF;
 			padding: 5px 25px 5px 13px;
-			@include border-radius(2em);
 			background: #09639c url(../images/buttons/down_arrow.png) right center no-repeat;
 			line-height: 1em;
 			margin-top: 0.5em;
-
 		}
 	}
 
@@ -362,12 +357,32 @@ body {
 	}
 }
 
-.error-404 {
-	background: #fff; 
-	border: 1px solid #d1d1d1; 
-	padding: 50px 0;
-
+#error {
+    background-color: #C9E5F0;
+    background-image: -moz-linear-gradient(left center , #C9E5F0 0%, #E7F1F5 50%, #B3D4E7 100%);
+    background-size: 100% auto;
+	
 	h1 {
-		margin: 30px 0;
+	    color: #0E76BC;
+	    font-size: 10em;
+	}
+	
+	h2 {
+	    color: #437496;
+		font-size: 2em;
+    	margin: 0 0 0 8em;
+	}
+
+	p {
+		@include GothamBook;
+	    color: #072C44;
+	    font-size: 1.4em;
+	    margin-top: 10%;
+	}
+	
+	span {
+	    color: #B7DEE7;
+	    float: right;
+	    font-size: 7em;
 	}
 }

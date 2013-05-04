@@ -50,9 +50,9 @@
 												<?php the_sub_field('content'); ?>											
 											</div>
 										<?php if(get_sub_field('testimonials') != '') :?>
-											<div class="bubble">
+											<blockquote>
 												<?php the_sub_field('testimonials'); ?>
-											</div>
+											</blockquote>
 										<?php endif; ?>
 									</div>
 								</div>

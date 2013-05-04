@@ -405,54 +405,12 @@ hr {
 	
 
 blockquote {
-	border-top: 4px solid #484848;
-	background: #d6d6d6;
-	padding: 20px;
-	margin: 0;
-}
-
-.post-category {
-	font-size: 12px;
-
-	a {
-		color: #b50f0c;
-	}
-}
-
-.pagination {
-	text-align: center;
-	margin: 10px 0;
-	font-size: 12px;
-	ol {
-		list-style: none;
-		display: inline-block;
-		clear: block;
-		margin: 0;
-		padding: 0;
-	}
-
-	li {
-		float: left;
-		a {
-			color: #a40000;
-		}
-
-		a, span {
-			display: inline-block;
-			margin: 0 5px;
-		}
-
-	}
-}
-
-
-.bubble {
 	background: #ffffff url(../images/icons/quotes_start.png) 15px 15px no-repeat;
 	@include box-shadow(0 2px 5px #65696b);
 	padding: 2em 4.5em;
 	@include border-radius(3em);
 	position: relative;
-	margin-top: 5em;
+	margin: 5em 0 0 0;
 
 	&:before {
     	background: url("../images/misc/speech_bubble.png") no-repeat scroll left top transparent;		
@@ -491,6 +449,40 @@ blockquote {
 		font-weight: bold;
 	}
 
+}
+
+.post-category {
+	font-size: 12px;
+
+	a {
+		color: #b50f0c;
+	}
+}
+
+.pagination {
+	text-align: center;
+	margin: 10px 0;
+	font-size: 12px;
+	ol {
+		list-style: none;
+		display: inline-block;
+		clear: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		float: left;
+		a {
+			color: #a40000;
+		}
+
+		a, span {
+			display: inline-block;
+			margin: 0 5px;
+		}
+
+	}
 }
 
 /* =============================================================================
@@ -573,14 +565,14 @@ button, .btn {
 }
 
 .arrow-up-btn {
-    top: -8em;
+    top: -7em;
     position: absolute;
     right: 2%;
-    padding-right: 2em;
+    padding-right: 1.5em;
     background: url(../images/icons/up_arrow.png) right center no-repeat;
     @include GothamBook;
     color: #444;
-    font-size: 1em;
+    font-size: 1.5em;
 
     @include media(5) {
     	top: -2em;
