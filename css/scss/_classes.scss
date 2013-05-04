@@ -1,0 +1,1031 @@
+/* =============================================================================
+   Backgrounds
+   ========================================================================== */
+
+.red-bg {
+	background-color: #c11d2d;
+}
+
+.dark-blue-bg {
+	background-color: #2c5065;
+}
+
+.blue-bg {
+	background-color: #016e9e;
+}
+
+.light-blue-bg {
+	background-color: #3895cb;
+}
+
+.white-bg {
+	background-color: #FFFFFF;
+}
+
+.black-bg {
+	background-color: #000000;
+}
+
+.semi-black-bg {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.grey-bg {
+	background-color: #f0f0f0;
+}
+
+/* =============================================================================
+   Text
+   ========================================================================== */
+@font-face {
+	font-family: 'GothamBold';
+	src: url('fonts/gothamrnd-bold.eot');
+	src: local('☺'), url('fonts/gothamrnd-bold.woff') format('woff'), url('fonts/gothamrnd-bold.ttf') format('truetype'), url('fonts/gothamrnd-bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamBook';
+	src: url('fonts/gothamrnd-book.eot');
+	src: local('☺'), url('fonts/gothamrnd-book.woff') format('woff'), url('fonts/gothamrnd-book.ttf') format('truetype'), url('fonts/gothamrnd-book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin GothamBold {
+	font-family: "GothamBold", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+@mixin GothamBook {
+	font-family: "GothamBook", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+
+
+@mixin arial {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+.arial {
+	@include arial;
+}
+
+
+
+a {
+	text-decoration: none;
+	color: #000000;
+	cursor: pointer;
+	@include transition(all 0.3s ease);
+}
+
+h1 {
+	@include GothamBook;
+	margin: 10px 0;
+	font-size: 5em;
+}
+
+h2 {
+	@include GothamBook;
+	margin: 18px 0;
+	font-size: 3.5em;
+}
+
+
+
+h3 {
+	@include GothamBook;
+	margin: 10px 0;
+	font-size: 3em;
+}
+
+h4 {
+	@include GothamBook;
+	margin: 5px 0;
+	font-size: 2em;
+
+}
+
+h5 {
+	@include GothamBook;
+	margin: 5px 0;
+	font-size: 1.6em;
+}
+
+p {
+	margin: 1em 0;
+	line-height: 1.7em;
+	font-size: 1.4em;
+}
+
+sup {
+   top: -0.2em;
+   text-transform: lowercase;
+}
+
+pre {
+	@include GothamBook;
+	background: #0977bc;
+	display: block;	
+	text-align: center;
+	@include border-radius(3em);
+	padding: 1em 1em 0.5em;
+	width: 90%;
+
+	span {
+		line-height: 0.7em;
+	}
+}
+
+.huge {
+	font-size: 150%;
+}
+
+.big {
+	font-size: 130%;
+}
+
+.small {
+	font-size: 90%;
+}
+
+.tiny {
+	font-size: 70%;
+}
+
+p.tiny {
+	margin: 5px 0;
+}
+
+.bold,
+strong,
+b {
+	font-weight: bold;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.align-left,
+.text-left {
+	text-align: left;
+}
+
+.align-right,
+.text-right {
+	text-align: right;
+}
+
+.align-center,
+.text-center {
+	text-align:  center;
+}
+
+.normal-style {
+	font-style: normal;	
+}
+
+.underline {
+	text-decoration: underline;	
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.black {
+	color: #000;
+}
+
+.white {
+	color: #fff;
+}
+
+.grey {
+	color: #a8a8a8;	
+}
+
+a.grey:hover {
+	color: #878787;	
+}
+
+.dark-grey {
+	color: #333333;
+}
+
+a.dark-grey:hover {
+	color: #141414;
+}
+
+.light-grey {
+	color: #585858;	
+}
+
+a.light-grey:hover {
+	color: #a8a8a8;	
+}
+
+.orange {
+	color: #d35c2a;	
+}
+
+a.orange:hover {
+	color: #ac4b22;
+}
+
+.pink {
+	color: #ed1375;	
+}
+
+.blue {
+	color: #0d4d66;	
+}
+
+.teal {
+	color: #13a89e;
+}
+
+.red {
+	color: #ed2724;
+}
+
+.green {
+	color: #557e06;
+}
+
+.purple {
+	color: #9c0059;
+}
+
+a.purple:hover {
+	color: #000000;
+}
+.error {
+	color: #7e0606;
+}
+
+/* =============================================================================
+   Misc
+   ========================================================================== */
+
+
+.ir {
+	border:0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background-color: transparent;
+}
+
+.hide {
+	display: none;
+}
+
+.hide-on-mobile {
+
+	@include media(6) {
+		display: none !important;
+	}
+}
+
+.hide-on-desktop {
+	display: none;
+	@include media(6) {
+		display: block !important;
+	}
+}
+
+.show,
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-border {
+	border: none;
+}
+
+.absolute {
+	position: absolute !important;
+}
+
+.relative {
+	position: relative;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.valign-middle {
+	vertical-align: middle;	
+}
+
+.dropshadow {
+	@include box-shadow(3px 3px 4px #666 );
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666');
+}
+
+.text-shadow {
+	text-shadow: 0px 2px 2px white;
+}
+
+hr {
+	background-color: #fff;
+	border: 0;
+    height: 5px;
+	margin: 0 auto;
+	width: 15%;
+}
+
+
+.border {
+	border: 1px solid #969696;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #969696;	
+}
+
+.border-top {
+	border-top: 1px solid #969696;	
+}
+
+.border-left {
+	border-left: 1px solid #969696;	
+}
+
+.border-right {
+	border-right: 1px solid #969696;	
+}
+
+.thick-border-top {
+	border-top: 2px solid #FFF;
+}
+
+.thick-border-bottom {
+	border-bottom: 2px solid #FFF;
+}
+
+.overlay {
+	width:100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	display: none;
+}
+	
+
+blockquote {
+	border-top: 4px solid #484848;
+	background: #d6d6d6;
+	padding: 20px;
+	margin: 0;
+}
+
+.post-category {
+	font-size: 12px;
+
+	a {
+		color: #b50f0c;
+	}
+}
+
+.pagination {
+	text-align: center;
+	margin: 10px 0;
+	font-size: 12px;
+	ol {
+		list-style: none;
+		display: inline-block;
+		clear: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		float: left;
+		a {
+			color: #a40000;
+		}
+
+		a, span {
+			display: inline-block;
+			margin: 0 5px;
+		}
+
+	}
+}
+
+
+.bubble {
+	background: #ffffff url(../images/icons/quotes_start.png) 15px 15px no-repeat;
+	@include box-shadow(0 2px 3px #65696b);
+	padding: 2em 4.5em;
+	@include border-radius(3em);
+	position: relative;
+	margin-top: 5em;
+
+	&:before {
+		content: '';
+	    border-bottom: 3em solid #FFF;
+	    border-left: 0 solid transparent;
+	    border-right: 3em solid transparent;
+	    height: 0;
+	    width: 0;		
+	    position: absolute;
+	    left: 10%;
+	    top: -3em;
+	};
+
+	&:after {
+		content: '';
+		width: 2.4em;
+		height: 1.6em;
+		background: url(../images/icons/quotes_end.png) left top no-repeat;
+		position: absolute;
+		right: 5%;
+		bottom: 5%;
+	};	
+
+	p {
+		@include GothamBook;
+		font-size: 1.4em;
+		color: #0977bc;
+		margin-bottom: 0;
+	}
+
+	small {
+		color: #333333;
+		@include arial;
+		font-weight: bold;
+	}
+
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+menu, ol, ul {
+	list-style-type: none;
+}
+
+.row {
+
+	ol {
+		padding: 0;
+
+		li {
+			background: url(../images/icons/list-tick-fat.png) left center no-repeat;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.3em;
+			padding-left: 2.8em;
+			line-height: 2em;
+		}
+	}	
+
+	ul {
+		margin-top: 3em;
+		padding: 0;
+
+		li {
+		    font-size: 1.4em;
+		    margin: 1em 0;
+		    padding-left: 1.5em;
+			background: url(../images/icons/list-tick.png) left top no-repeat;
+			line-height: 1.3em;
+		}
+	}   	
+}
+ 
+
+/* =============================================================================
+   Buttons
+   ========================================================================== */
+
+#shape  {
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;}
+
+.rotate {-moz-transform: rotate(-90deg);
+     -webkit-transform:rotate(-90deg);
+     -ms-transform:rotate(-90deg);
+     -o-transform:rotate(-90deg);
+}   
+
+button, .btn {
+	@include border-radius(1.5em);
+	@include inline-block;
+	@include text-shadow(1px 1px 1px #000);
+    color: #FFFFFF;
+    position: relative;
+    z-index: 5;
+    font-size: 1em;
+    line-height: 2.3em;
+    padding: 0 30px;
+	border: 1px solid #1271a8;
+	background-color: #76b7e2;
+	@include filter-gradient(#76b7e2, #145d92, vertical);
+	@include background-image(linear-gradient(top,  #76b7e2 0%,#106eb2 5%,#106eb2 66%,#145d92 66%,#145d92 100%)); 
+	@include box-shadow(0 1px 2px black);   	
+
+    &.pink {
+		border: 1px solid #8c1f44;
+		background-color: #ffffff;
+		@include filter-gradient(#ffffff, #9f214a, vertical);
+		@include background(image-url('../images/buttons/down_arrow.png'), linear-gradient(top, #ffffff 0%,#ab234f 5%,#ab234f 66%,#9f214a 66%,#9f214a 100%));;
+		@include box-shadow(0 1px 2px black);
+
+    }
+
+}
+
+.arrow-up-btn {
+    top: -8em;
+    position: absolute;
+    right: 2%;
+    padding-right: 2em;
+    background: url(../images/icons/up_arrow.png) right center no-repeat;
+    @include GothamBook;
+    color: #444;
+    font-size: 1em;
+
+    @include media(5) {
+    	top: -2em;
+    }
+}
+
+
+/* =============================================================================
+   Grid
+   ========================================================================== */
+
+.row {
+	padding: 120px 0;
+	background-repeat: no-repeat;
+	background-position: center top;
+	@include background-size(contain);
+
+	@include media(5) {
+		padding: 4em 0;
+	} 
+
+	> .inner {
+
+		.row-title {
+			margin-bottom: 50px;
+
+			@include media(4) {
+				font-size: 25px;
+			}
+
+		}
+
+		.column {
+			padding: 0 20px;
+
+			img {
+				max-width: 92%;
+				height: auto;
+
+				@include media(6) {
+					position: static;
+				}
+			}
+		}
+	}
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.container:before,
+.container:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.container:after {
+    clear: both;
+}
+
+.container {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	 *zoom: 1;
+	 
+
+	 @include media(10){
+	 	width: auto;
+	 	padding-left: 2em;
+	 	padding-right: 2em;
+	 }
+}
+
+.span {
+	min-height: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	display: block;
+	position: relative;
+	@include box-sizing(border-box);
+
+	embed, iframe, object {
+	    width: 100%;
+	}
+}
+
+.break {
+	@include media(6) {
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.alpha.span {
+	padding-left: 0px;
+}
+
+.omega.span {
+	padding-right: 0px;
+}
+ 
+$columns: ((one, 10%), (two, 20%), (two-and-half, 25%), (three, 30%), (one-third, 33%), (four, 40%), (five, 50%), (six, 60%), (seven, 70%), (seven-and-half, 75%), (eight, 80%), (nine, 90%), (ten, 100%));
+$total_columns: length($columns);
+
+@mixin columns(){
+	$i: 1;
+	@each $column in $columns {
+		$class: nth($column, 1);
+		$width: nth($column, 2);
+		
+		.span.#{$class} {
+			width: ($width);
+		}
+
+		.push-#{$class} {
+			margin-left: ($width);
+		}
+
+		.pull-#{$class} {
+			margin-left: -($width);
+		}
+		$i: $i + 1;
+	}
+}
+
+@include columns();
+
+
+.left, .alignleft {
+	float: left;
+}
+
+.right, .alignright {
+	float: right;
+}
+
+.aligncenter,
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.half-width {
+	width: 50%;
+}
+
+.third-width {
+	width: 33%;
+}
+
+.full-height {
+	height: 100%;
+}
+
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+
+
+/* =============================================================================
+   Gravity
+   ========================================================================== */
+
+.gform_wrapper {
+
+	.gform_heading {
+		margin: 10px 0;
+
+	}
+
+	.validation_error {
+		color: #a40000;
+	}
+
+	.gform_body {
+		margin: 20px 0;
+		font-family: Arial, Helvetica, sans-serif;
+
+		font-size: 11px;
+
+		.gform_fields {
+			margin: 0;
+			padding: 0 !important;
+			list-style: none;
+
+			.gfield {
+				padding-left: 0 !important;
+				background: none;
+
+				.gfield_label {
+					.gfield_required {
+						color: #a40000;
+						padding: 0 0 0 5px;
+					}
+				}
+
+				.gfield_description {
+					font-size: 10px;
+				 	font-style: italic;
+				 	text-align: right;
+
+					&.validation_message {
+						color: #a40000;
+					}
+				}
+
+				.ginput_container {
+					input,
+					textarea {
+						border: 1px solid #dedede;
+					}
+				}		
+			}
+		}
+	}
+
+	.gform_footer {
+		.button {
+			display: inline-block;
+			color: #FFF;
+			background: #000;
+			padding: 10px;
+			@include GothamBold;
+			text-transform: uppercase;
+			@include text-shadow(none);
+			// @include box-shadow(0px 3px 0px 0px rgba(0,0,0, 0.4));
+			&:hover {
+				background: #000;
+			}
+			&:active {
+				@include box-shadow(none);
+				position: relative;
+				top: 0px;	
+			}
+		}
+	}
+}
+
+
+/* =============================================================================
+   Pagination
+   ========================================================================== */
+
+ .pagination {
+	text-align: center;
+	text-transform: lowercase;
+	a {
+		&:hover {
+			color: #000;
+			background: #FFF;
+		}
+	}
+	.page-numbers {
+		display: inline-block;
+		height: 34px;
+		line-height: 34px;
+		color: #FFF;
+		background: #000;
+		padding: 0 10px;
+		border: 1px solid #000;
+
+		&.dots {
+			color: #000;
+			background: #FFF;
+			border-color: #FFF;
+		}
+		
+		&.current {
+			color: #000;
+			background: #FFF;
+		}
+
+		&.next,
+		&.prev, {
+			position: relative;
+			&:after,
+			&:before {
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: -1px;
+			}
+
+			&:after {
+				@include transition(all 0.3s ease);
+			}
+
+			&:hover {
+				&:after {
+					border-left-color: #FFF;
+					border-right-color: #FFF;
+				}
+			}
+		}
+
+		&.next {
+			&:before {
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+				border-left: 17px solid #000;
+				right: -18px;
+			}
+
+			&:after {
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+				border-left: 17px solid #000;
+				right: -17px;
+			}
+
+		}
+
+		&.prev {
+			&:before {
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+				border-right: 17px solid #000;
+				left: -18px;
+			}
+
+			&:after {
+				border-top: 18px solid transparent;
+				border-bottom: 18px solid transparent;
+				border-right: 17px solid #000;
+				left: -17px;
+			}
+		}
+	}
+}
+.wp-pagination {
+	display:block;
+	padding: 40px;
+}
+.wp-paginate {
+	padding:0;
+	margin:0;
+	text-align: center;
+
+	li {
+		display:inline;
+		list-style:none;
+	}
+
+	a {
+		background:#000;
+		color:#fff; 
+		margin-right:4px; 
+		padding: 8px 11px 7px; 
+		text-align:center; 
+		text-decoration:none;
+
+		&:hover {
+			color: #FFF !important;
+		};
+	}
+
+	.title {
+		color:#555; 
+		margin-right: 25px;
+	}
+
+	.gap {
+		color:#999; 
+		margin-right:4px;
+	}
+
+	.current {
+		color: #000; 
+		background: #fff; 
+		border: 1px solid #000; 
+		margin-right: 4px; 
+		padding: 7px 10px;
+	}	
+
+	.next, .prev {
+		position: relative;	
+	}
+	.next {
+		position: relative;
+
+		&:after {
+			left: 100%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:after {
+			border-color: rgba(0, 0, 0, 0);
+			border-left-color: #000;
+			border-width: 18px;
+			top: 50%;
+			margin-top: -18px;
+		}
+
+	}
+
+	.prev {
+		position: relative;
+	
+		&:after {
+			right: 100%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&:after {
+			border-color: rgba(0, 0, 0, 0);
+			border-right-color: #000;
+			border-width: 18px;
+			top: 50%;
+			margin-top: -18px;
+		}
+	}
+}
