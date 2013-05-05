@@ -207,6 +207,13 @@ body {
 		p {
 			font-size: 1.3em;
 		}
+
+		.push-one {
+
+			@include media(6) {
+				margin-left: 0;
+			}
+		}
 	}
 
 	.copyright {
