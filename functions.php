@@ -29,3 +29,11 @@ function twistkey_setup() {
 }
 endif; // twistkey_setup
 add_action( 'after_setup_theme', 'twistkey_setup' );
+
+add_action('tiny_mce_before_init', 'custom_tinymce_options');
+if ( ! function_exists( 'custom_tinymce_options' )) {
+		function custom_tinymce_options($init){
+		$init['apply_source_formatting'] = true;
+		return $init;
+	}
+}

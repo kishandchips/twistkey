@@ -298,6 +298,23 @@ body {
 		}
 	}
 
+	blockquote {
+		&:before {
+	    	background: url("../images/misc/speech_bubble.png") no-repeat scroll left top transparent;		
+		    content: "";
+		    height: 2.2em;
+		    left: 10%;
+		    position: absolute;
+		    top: -2.2em;
+		    width: 2.5em;
+		};
+
+		p {
+			color: #0977bc;
+		}
+
+	}
+
 	.navigation {
 		padding: 6.5em 0;
 		background-color: #1891cf; // Old browsers
@@ -312,9 +329,14 @@ body {
 			@include border-radius(2em);
 			color: #FFF;
 			padding: 5px 25px 5px 13px;
-			background: #09639c url(../images/buttons/down_arrow.png) right center no-repeat;
+			background: #09639c url(../images/buttons/down_arrow_short.png) right center no-repeat;
 			line-height: 1em;
 			margin-top: 0.5em;
+
+			&:hover {
+				background: #0172ba url(../images/buttons/down_arrow_short.png) right center no-repeat;
+				color: #000;
+			};
 		}
 	}
 
@@ -345,6 +367,10 @@ body {
 		.image {
 			float: right;
 		}
+	}
+
+	article .row:first-child .arrow-up-btn {
+		display: none;
 	}
 }
 

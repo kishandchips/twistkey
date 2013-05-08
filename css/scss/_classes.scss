@@ -393,6 +393,10 @@ hr {
 	border-bottom: 2px solid #FFF;
 }
 
+.margin-bottom {
+	margin-bottom: 7em !important;
+}
+
 .overlay {
 	width:100%;
 	height: 100%;
@@ -402,24 +406,32 @@ hr {
 	left: 0;
 	display: none;
 }
+
+.box {
+	background: #f0f0f0;
+	border: 1px solid #bebebe;
+	@include border-radius(5px);
+	padding: 1em 2em;
+	margin: 0;
+}
 	
 
 blockquote {
 	background: #ffffff url(../images/icons/quotes_start.png) 15px 15px no-repeat;
 	@include box-shadow(0 2px 5px #65696b);
-	padding: 2em 4.5em;
+	padding: 2em 4.5em 3em;
 	@include border-radius(3em);
 	position: relative;
 	margin: 5em 0 0 0;
 
 	&:before {
-    	background: url("../images/misc/speech_bubble.png") no-repeat scroll left top transparent;		
+    	background: url("../images/misc/speech_bubble_right.png") no-repeat scroll left top transparent;		
 	    content: "";
 	    height: 2.2em;
-	    left: 10%;
+	    right: 15%;
 	    position: absolute;
 	    top: -2.2em;
-	    width: 2.5em;
+	    width: 4.5em;
 	};
 
 	&:after {
@@ -435,7 +447,7 @@ blockquote {
 	p {
 		@include GothamBook;
 		font-size: 1.4em;
-		color: #0977bc;
+		color: #1b2b44;
 		margin-bottom: 0;
 
 		@include media(4) {
@@ -525,6 +537,10 @@ menu, ol, ul {
 /* =============================================================================
    Buttons
    ========================================================================== */
+button::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
 
 button, .gform_button, .btn {
 	@include border-radius(1.5em);
@@ -534,21 +550,80 @@ button, .gform_button, .btn {
     position: relative;
     z-index: 5;
     font-size: 1em;
-    line-height: 2.3em;
-    padding: 0 2em;
+    padding: 0.3em 2em;	
 	border: 1px solid #1271a8;
 	background-color: #76b7e2;
 	@include filter-gradient(#76b7e2, #145d92, vertical);
 	@include background-image(linear-gradient(top,  #76b7e2 0%,#106eb2 5%,#106eb2 75%,#145d92 75%,#145d92 100%)); 
-	@include box-shadow(0 1px 2px black);   	
+	@include box-shadow(0 1px 2px black);  
+
+	&:hover {
+		background-color: #45a3e1;
+		@include filter-gradient(#45a3e1, #176aa7, vertical);
+		@include background-image(linear-gradient(top,  #45a3e1 0%,#137cc8 5%,#137cc8 75%,#176aa7 75%,#176aa7 100%)); 
+		@include box-shadow(0 1px 2px black);  
+	}
 
     &.pink {
 		border: 1px solid #8c1f44;
-		background-color: #ffffff;
-		@include filter-gradient(#ffffff, #9f214a, vertical);
-		background: url("../images/buttons/down_arrow.png") right center no-repeat, -moz-linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%) repeat scroll 0 0 transparent;
 		@include box-shadow(0 1px 2px black);
+		padding-right: 3em;
+		background: #ffffff;
+		background-image: url(../images/buttons/down_arrow.png); /* fallback */
+		background-image: url(../images/buttons/down_arrow.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#ab234f), color-stop(75%,#ab234f), color-stop(75%,#9f214a), color-stop(100%,#9f214a)); /* Chrome,Safari4+ */
+		background-image: url(../images/buttons/down_arrow.png), -webkit-linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%); /* Chrome 10+, Saf5.1+ */
+		background-image: url(../images/buttons/down_arrow.png),    -moz-linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%); /* FF3.6+ */
+		background-image: url(../images/buttons/down_arrow.png),     -ms-linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%); /* IE10 */
+		background-image: url(../images/buttons/down_arrow.png),      -o-linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%); /* Opera 11.10+ */
+		background-image: url(../images/buttons/down_arrow.png),         linear-gradient(center top , #FFFFFF 0%, #AB234F 5%, #AB234F 75%, #9F214A 75%, #9F214A 100%); /* W3C */		
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#9f214a',GradientType=0 ); /* IE6-9 */
+		background-repeat: no-repeat;
+		background-position: right center;
 
+		&:hover {
+			background: #ffffff;
+			background-image: url(../images/buttons/down_arrow.png); /* fallback */
+			background-image: url(../images/buttons/down_arrow.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#c52a5c), color-stop(75%,#c52a5c), color-stop(75%,#ac2652), color-stop(100%,#ac2652)); /* Chrome,Safari4+ */
+			background-image: url(../images/buttons/down_arrow.png), -webkit-linear-gradient(center top , #FFFFFF 0%, #c52a5c 5%, #c52a5c 75%, #ac2652 75%, #ac2652 100%); /* Chrome 10+, Saf5.1+ */
+			background-image: url(../images/buttons/down_arrow.png),    -moz-linear-gradient(center top , #FFFFFF 0%, #c52a5c 5%, #c52a5c 75%, #ac2652 75%, #ac2652 100%); /* FF3.6+ */
+			background-image: url(../images/buttons/down_arrow.png),     -ms-linear-gradient(center top , #FFFFFF 0%, #c52a5c 5%, #c52a5c 75%, #ac2652 75%, #ac2652 100%); /* IE10 */
+			background-image: url(../images/buttons/down_arrow.png),      -o-linear-gradient(center top , #FFFFFF 0%, #c52a5c 5%, #c52a5c 75%, #ac2652 75%, #ac2652 100%); /* Opera 11.10+ */
+			background-image: url(../images/buttons/down_arrow.png),         linear-gradient(center top , #FFFFFF 0%, #c52a5c 5%, #c52a5c 75%, #ac2652 75%, #ac2652 100%); /* W3C */		
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#9f214a',GradientType=0 ); /* IE6-9 */
+			background-repeat: no-repeat;
+			background-position: right center;			
+
+		}
+
+
+    }
+
+    &.download {
+    	margin: 0 0.5em;
+    	padding-right: 3em;
+		background: #76b7e2;
+		background-image: url(../images/icons/download.png); /* fallback */
+		background-image: url(../images/icons/download.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#76b7e2), color-stop(5%,#106eb2), color-stop(75%,#106eb2), color-stop(75%,#145d92), color-stop(100%,#145d92)); /* Chrome,Safari4+ */
+		background-image: url(../images/icons/download.png), -webkit-linear-gradient(center top , #76b7e2 0%, #106eb2 5%, #106eb2 75%, #145d92 75%, #145d92 100%); /* Chrome 10+, Saf5.1+ */
+		background-image: url(../images/icons/download.png),    -moz-linear-gradient(center top , #76b7e2 0%, #106eb2 5%, #106eb2 75%, #145d92 75%, #145d92 100%); /* FF3.6+ */
+		background-image: url(../images/icons/download.png),     -ms-linear-gradient(center top , #76b7e2 0%, #106eb2 5%, #106eb2 75%, #145d92 75%, #145d92 100%); /* IE10 */
+		background-image: url(../images/icons/download.png),      -o-linear-gradient(center top , #76b7e2 0%, #106eb2 5%, #106eb2 75%, #145d92 75%, #145d92 100%); /* Opera 11.10+ */
+		background-image: url(../images/icons/download.png),         linear-gradient(center top , #76b7e2 0%, #106eb2 5%, #106eb2 75%, #145d92 75%, #145d92 100%); /* W3C */		
+    	background-position: right center;
+    	background-repeat: no-repeat;
+
+    	&:hover {
+			background: #45a3e1;
+			background-image: url(../images/icons/download.png); /* fallback */
+			background-image: url(../images/icons/download.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45a3e1), color-stop(5%,#106eb2), color-stop(75%,#106eb2), color-stop(75%,#145d92), color-stop(100%,#145d92)); /* Chrome,Safari4+ */
+			background-image: url(../images/icons/download.png), -webkit-linear-gradient(center top , #45a3e1 0%, #137cc8 5%, #137cc8 75%, #176aa7 75%, #176aa7 100%); /* Chrome 10+, Saf5.1+ */
+			background-image: url(../images/icons/download.png),    -moz-linear-gradient(center top , #45a3e1 0%, #137cc8 5%, #137cc8 75%, #176aa7 75%, #176aa7 100%); /* FF3.6+ */
+			background-image: url(../images/icons/download.png),     -ms-linear-gradient(center top , #45a3e1 0%, #137cc8 5%, #137cc8 75%, #176aa7 75%, #176aa7 100%); /* IE10 */
+			background-image: url(../images/icons/download.png),      -o-linear-gradient(center top , #45a3e1 0%, #137cc8 5%, #137cc8 75%, #176aa7 75%, #176aa7 100%); /* Opera 11.10+ */
+			background-image: url(../images/icons/download.png),         linear-gradient(center top , #45a3e1 0%, #137cc8 5%, #137cc8 75%, #176aa7 75%, #176aa7 100%); /* W3C */		    		
+	    	background-position: right center;
+    		background-repeat: no-repeat;
+    	};
     }
 
 }
@@ -576,8 +651,7 @@ button, .gform_button, .btn {
 .row {
 	padding: 12em 0;
 	background-repeat: no-repeat;
-	background-position: center top;
-	@include background-size(contain);
+	background-position: center 20%;
 
 	@include media(6) {
 		padding: 4em 0;
@@ -746,16 +820,9 @@ $total_columns: length($columns);
    Forms
    ========================================================================== */
 
-
-
-/* =============================================================================
-   Gravity
-   ========================================================================== */
-
 label {
     display: block;
 	font-size: 13px;
-	font-weight: normal !important;
     margin: 0 10px;
     color: #1b2b44;
 }
@@ -778,17 +845,22 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 #input_1_6_6_container {
+	width: 95% !important;
+}
+
+#input_1_6_6_container, #input_2_6_6_container, #select-container {
 	border:1px solid #888f9a;
-		@include border-radius(5px);
-		@include box-shadow( inset #EDEDED 2px 2px 25px); 
-		color: #333333;
-		background: #fff;
-		font-weight: bold;
-		font-style: normal;
-		font-weight: bold;
-    	background: url("../images/icons/select-arrow.png") no-repeat scroll right center white;	
-    	padding-top: 0.4em;		
-    	width: 95%;	
+	@include border-radius(5px);
+	@include box-shadow( inset #EDEDED 2px 2px 25px); 
+	color: #333333;
+	background: #fff;
+	font-weight: bold;
+	font-style: normal;
+	font-weight: bold;
+	background: url("../images/icons/select-arrow.png") no-repeat scroll right center white;	
+	padding-top: 0.4em;		
+	width: 95%;	
+	overflow: hidden;
 
 	select {
 		border: none;		
@@ -803,6 +875,26 @@ input[type="text"], input[type="email"], input[type="password"] {
 	}
 }
 
+#select-container {
+	color: #333333;
+	font-weight: bold;
+	font-size: 1.4em;
+    width: 60%;
+    margin: 1em auto;
+
+    @include media(10) {
+    	width: 100%;
+    }
+
+	select {
+		padding: 0.3em 0 0.6em;
+
+		option {
+		}
+	}
+	
+}
+
 textarea {
 	border:1px solid #8a97a4;
 	@include border-radius(5px);
@@ -810,7 +902,7 @@ textarea {
 	color: #333333;
 	font-style: italic;
 	background: #fff;
-	width: 92% !important;
+	width: 91% !important;
 	font-style: normal;
 	font-weight: bold;
 	padding: 1em !important;
@@ -820,8 +912,21 @@ textarea {
 	}
 } 
 
-#input_1_6_1_container, #input_1_6_3_container, #input_1_6_5_container, #input_1_6_6_label {
+
+/* =============================================================================
+   Gravity
+   ========================================================================== */
+
+#input_1_6_1_container, #input_1_6_3_container, #input_1_6_5_container, #input_1_6_6_label, #input_2_6_6_label  {
 	display: none;
+}
+
+#field_2_7 {
+	clear: both;
+}
+
+#input_2_6_6_container {
+	width: 47% !important;
 }
 
 .gform_wrapper {
@@ -868,7 +973,7 @@ textarea {
 			.ginput_left {
 				@include box-sizing(border-box);
 			 	float: left;
-				width: 50%;
+				width: 50% !important;
 
 				.ginput_left {
 					width: 100%;
@@ -882,8 +987,8 @@ textarea {
 
 			.ginput_right {
 				@include box-sizing(border-box);
-		 		float: right;
-				width: 49%;
+		 		float: left;
+				width: 49% !important;
 
 				@include media(3) {
 					float: none;
@@ -893,7 +998,7 @@ textarea {
 
 			 .ginput_full {
 			 	input {
-			 		width: 98% !important;	
+			 		width: 96.5% !important;	
 			 	}
 			 	
 			 }		
@@ -911,7 +1016,9 @@ textarea {
 	}
 
 	.gform_footer {
-		.button {
+		.gform_button {
+			float: right;
+		    font-size: 1.5em !important;
 		}
 	}
 }

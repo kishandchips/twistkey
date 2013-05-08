@@ -34,6 +34,16 @@
 				return false;
 			});	
 
+		    $(function(){
+		      $('#dynamic_select').bind('change', function () {
+		          var url = $(this).val(); // get selected value
+		          if (url) { // require a URL
+		              window.location = url; // redirect
+		          }
+		          return false;
+		      });
+		    });
+
 		  	$("#template-examples .example").filter(":nth-child(even)").addClass("evenrow");
 
 		   	$.fn.eqHeights = function() {
