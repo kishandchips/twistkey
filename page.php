@@ -31,10 +31,10 @@
 								<?php endif; ?>
 								<?php if($layout == 'two_columns'): ?>
 									<?php if($title) :?><h2  class="row-title text-center"><?php echo $title; ?></h2><?php endif; ?>
-									<div class="column span five break">
+									<div class="column span five break" style="<?php the_sub_field('styles_first_column'); ?>">
 										<?php the_sub_field('content_first_column'); ?>
 									</div>
-									<div class="column span five break">
+									<div class="column span five break" style="<?php the_sub_field('styles_second_column'); ?>">
 										<?php the_sub_field('content_second_column'); ?>
 									</div>
 								<?php endif; ?>

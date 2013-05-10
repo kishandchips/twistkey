@@ -1,7 +1,16 @@
 body {
 	color: #273B48;
 	font-size: 62.5%;
-	overflow-x: hidden; 
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+
+	@include media(8){
+		font-size: 58%;
+	}
+
+	@include media(5){
+		font-size: 50%;
+	}
 }
 
 #wrap {
@@ -49,18 +58,24 @@ body {
 	}
 
 	.logo-container {
-		width: 4em;
+		width: 6em;
 		float: left;
 		margin-top: 0.7em;
-
+		height: 1.4em;	
+		@include media(9){
+			width: 5em;
+		}
 		@include media(8) {
 			float: none;
 		}
 		
 		.logo {
-			height: 1em;
+			width: 100%;
+			height: 100%;
 			display: block;
+			background: url(../images/logos/header_logo.png) left top no-repeat;
 			background: url(../images/logos/header_logo.svg) left top no-repeat;
+			background-size: contain;
 			text-indent: -9999px;
 			overflow: hidden;
 		}
@@ -91,7 +106,7 @@ body {
 			display: inline-block;
 		    position: absolute;
 		    right: 2em;
-		    top: 3.5em;				
+		    top: 2em;				
 		}
 	}	    
 
@@ -99,6 +114,10 @@ body {
 		padding: 0;
 		margin-top: 4.5em;
 		float: right;
+
+		@include media(9){
+			margin-top: 4.3em;
+		}
 
 		@include media(8) {
 			float: none;
@@ -117,10 +136,11 @@ body {
 			 	float: left;
 				padding: 0;
 			 	position: relative;
-
+			 	margin-left: 0.8em;
 			 	@include media(6) {
 			 		float:none;
-  					border-bottom: 1px dashed #252525;	
+  					border-bottom: 1px dashed #252525;
+  					margin: 0;
   					
   					&:first-child {
   						  border-top: 1px dashed #252525;
@@ -138,11 +158,12 @@ body {
 
 			 	> a {
 			 		display: block;
-					padding: 1em 1.2em 0.8em 1.2em;
+					padding: 0.5em 0.8em;
 					@include GothamBold;
 			 		font-size: 1.3em;
 			 		line-height: 1.4em;
 				 	color: #999;
+				 	@include border-radius(2em);
 
 				 	@include media(10) {
 				 		font-size: 1.2em;
@@ -178,6 +199,7 @@ body {
 			 	&.current-post-parent > a,
 			 	&.current > a {
 			 		color: #fff;
+			 		background: #000;
 
 			 		@include media(6) {
 			 			color: #2AACE2;
