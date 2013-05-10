@@ -13,9 +13,9 @@ function uploads_url_handler( $atts ) {
 
 add_shortcode('select', 'select_handler');
 function select_handler( $atts, $content = null ) {
-	return '<div class="box margin-bottom"><div id="select-container"><select id="dynamic_select">
+	return '<label>What do you want to do?</label><div id="select-container"><select id="dynamic_select">
+	<option selected="selected">Choose an option</option>
     <option value="'.get_bloginfo('url').'/get-a-sample/">Request a free design template</option>
     <option value="'.get_bloginfo('url').'/create-your-own/">Create your own design</option>
-</select></div></div>';
+</select></div>';
 }
-

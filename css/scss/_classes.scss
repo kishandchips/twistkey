@@ -412,7 +412,6 @@ hr {
 	border: 1px solid #bebebe;
 	@include border-radius(5px);
 	padding: 1em 2em;
-	margin: 0;
 }
 	
 
@@ -515,7 +514,7 @@ menu, ol, ul {
 			font-size: 1.3em;
 			padding-left: 2.8em;
 			line-height: 1.4em;
-			margin-bottom: 0.9em;
+			margin-bottom: 0.7em;
 		}
 	}	
 
@@ -599,7 +598,7 @@ button, .gform_button, .btn {
     }
 
     &.download {
-    	margin: 0 0.5em;
+    	margin: 0.2em 0.5em;
     	padding-right: 3em;
 		background: #76b7e2;
 		background-image: url(../images/icons/download.png); /* fallback */
@@ -823,8 +822,9 @@ $total_columns: length($columns);
 label {
     display: block;
 	font-size: 13px;
-    margin: 0 10px;
     color: #1b2b44;
+    font-weight: bold;
+    margin-bottom: -1em;
 }
 
 input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"] {
@@ -879,15 +879,15 @@ input[type="text"], input[type="email"], input[type="password"] {
 	color: #333333;
 	font-weight: bold;
 	font-size: 1.4em;
-    width: 60%;
-    margin: 1em auto;
-
+    width: 70%;
+    margin-bottom: 7em;
     @include media(10) {
     	width: 100%;
     }
 
 	select {
 		padding: 0.3em 0 0.6em;
+		outline: none;
 
 		option {
 		}
@@ -997,8 +997,17 @@ textarea {
 			 }
 
 			 .ginput_full {
+			 	clear: both;
 			 	input {
-			 		width: 96.5% !important;	
+			 		width: 96.5% !important;
+			 		
+			 	}
+
+			 	&.gfield_error {
+				 	input {
+				 		width: 100% !important;
+				 		
+				 	}			 		
 			 	}
 			 	
 			 }		
@@ -1021,6 +1030,17 @@ textarea {
 		    font-size: 1.5em !important;
 		}
 	}
+}
+
+.gfield.gfield_error {
+	background-color: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+.validation_message {
+	padding: 0 20px 10px 0 !important;
+	@include box-sizing(border-box);
 }
 
 
