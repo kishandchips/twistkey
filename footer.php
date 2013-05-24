@@ -11,10 +11,10 @@
 				<div class="span column two push-one break">
 					<h5>Follow us</h5>
 					<div class="socials">
-						<a href="" class="facebook"></a>
-						<a href="" class="twitter"></a>
-						<a href="" class="linkedin"></a>
-						<a href="" class="googleplus"></a>
+						<a target="_blank" href="https://www.facebook.com/TwistKey" class="facebook"></a>
+						<a target="_blank" href="https://twitter.com/TwistKeyTweets" class="twitter"></a>
+						<a target="_blank" href="http://www.linkedin.com/company/1739872" class="linkedin"></a>
+						<a target="_blank" href="https://plus.google.com/106655841209011591690" class="googleplus"></a>
 					</div>
 				</div>
 			</div>
