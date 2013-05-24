@@ -76,12 +76,12 @@ body {
 			height: 100%;
 			display: block;
 			background: url(../images/logos/header_logo.png) left top no-repeat;
-			background: url(../images/logos/header_logo.svg) left top no-repeat;
 			background-size: contain;
 			text-indent: -9999px;
 			overflow: hidden;
 		}
 	}
+	
 
 	.mobilenav {
 		display: none;
@@ -220,6 +220,10 @@ body {
 			}
 		} 
 	}
+}
+
+.svgfilters #header .logo {
+	background: url(../images/logos/header_logo.svg) left top no-repeat;
 }
 		
 			
