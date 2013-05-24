@@ -41,25 +41,59 @@
 @font-face {
 	font-family: 'GothamBold';
 	src: url('fonts/gothamrnd-bold.eot');
-	src: local('☺'), url('fonts/gothamrnd-bold.woff') format('woff'), url('fonts/gothamrnd-bold.ttf') format('truetype'), url('fonts/gothamrnd-bold.svg') format('svg');
+	src: url('fonts/gothamrnd-bold.eot?#iefix') format('eot');
+	src: local('☺'), 
+		url('fonts/gothamrnd-bold.woff') format('woff'), 
+		url('fonts/gothamrnd-bold.ttf') format('truetype'), 
+		url('fonts/gothamrnd-bold.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'GothamBold';
+        src: url('fonts/gothamrnd-bold.svg') format('svg');
+    }
 }
 
 @font-face {
 	font-family: 'GothamBook';
 	src: url('fonts/gothamrnd-book.eot');
-	src: local('☺'), url('fonts/gothamrnd-book.woff') format('woff'), url('fonts/gothamrnd-book.ttf') format('truetype'), url('fonts/gothamrnd-book.svg') format('svg');
+	src: url('fonts/gothamrnd-book.eot?#iefix') format('eot');
+	src: local('☺'),
+		url('fonts/gothamrnd-book.svg') format('svg'),
+		url('fonts/gothamrnd-book.woff') format('woff'),
+		url('fonts/gothamrnd-book.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'GothamBook';
+        src: url('fonts/gothamrnd-book.svg') format('svg');
+    }
 }
 
 @font-face {
 	font-family: 'GothamLight';
 	src: url('fonts/gothamrnd-light.eot');
-	src: local('☺'), url('fonts/gothamrnd-light.woff') format('woff'), url('fonts/gothamrnd-light.ttf') format('truetype'), url('fonts/gothamrnd-light.svg') format('svg');
+	src: url('fonts/gothamrnd-light.eot?#iefix') format('eot');
+	src: local('☺'),
+		url('fonts/gothamrnd-light.woff') format('woff'),
+		url('fonts/gothamrnd-light.ttf') format('truetype'),
+		url('fonts/gothamrnd-light.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'GothamLight';
+        src: url('fonts/gothamrnd-light.svg') format('svg');
+    }
 }
 
 @mixin GothamBold {
@@ -77,6 +111,17 @@
 	font-weight: normal;
 }
 
+.gotham-bold {
+	@include GothamBold;
+}
+
+.gotham-book {
+	@include GothamBook;
+}
+
+.gotham-light {
+	@include GothamLight;
+}
 
 @mixin arial {
 	font-family: Arial, Helvetica, sans-serif;
@@ -99,13 +144,16 @@ a {
 h1 {
 	@include GothamBook;
 	margin: 10px 0;
-	font-size: 4em;
+	font-size: 4.4em;
+	letter-spacing: -1px;
+	line-height: 1.3;
 }
 
 h2 {
 	@include GothamLight;
 	margin: 18px 0;
 	font-size: 3.5em;
+	line-height: 1.3;
 }
 
 
@@ -114,6 +162,8 @@ h3 {
 	@include GothamLight;
 	margin: 10px 0;
 	font-size: 3em;
+	line-height: 1.3;
+	letter-spacing: -1px;
 }
 
 h4 {
@@ -131,8 +181,8 @@ h5 {
 
 p {
 	margin: 1em 0;
-	line-height: 1.7em;
-	font-size: 1.4em;
+	line-height: 1.5em;
+	font-size: 1.3em;
 }
 
 sup {
@@ -141,14 +191,13 @@ sup {
 }
 
 pre {
-	@include GothamBook;
+	@include arial;
 	background: #0977bc;
 	display: block;	
 	text-align: center;
 	@include border-radius(3em);
 	padding: 1em 1em 0.5em;
 	width: 90%;
-
 	span {
 		line-height: 0.7em;
 	}
@@ -424,6 +473,21 @@ hr {
 	border: 1px solid #bebebe;
 	@include border-radius(5px);
 	padding: 1em 2em;
+
+	&.arrow-down {
+		position: relative;
+		&:after {
+			content: '';
+			display: block;
+			width: 35px;
+			height: 41px;
+			background: url(../images/misc/arrow_down.png) no-repeat;
+			position: absolute;
+			left: 50%;
+			bottom: -40px;
+			margin-left: -17px;
+		}
+	}
 }
 	
 
@@ -515,34 +579,33 @@ menu, ol, ul {
 	list-style-type: none;
 }
 
-.row {
+	// ul {
+	// 	margin-top: 3em;
+	// 	padding: 0;
 
-	ol {
-		padding: 0;
+	// 	li {
+	// 	    font-size: 1.4em;
+	// 	    margin: 1em 0;
+	// 	    padding-left: 1.5em;
+	// 		background: url(../images/icons/list-tick.png) left top no-repeat;
+	// 		line-height: 1.3em;
+	// 	}
+	// }
 
-		li {
-			background: url(../images/icons/list-tick-fat.png) left 0.4em no-repeat;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 1.3em;
-			padding-left: 2em;
-			line-height: 1.4em;
-			margin-bottom: 0.7em;
-		}
-	}	
 
-	ul {
-		margin-top: 3em;
-		padding: 0;
+.tick-list {
+	padding: 0;
+	list-style: none;
 
-		li {
-		    font-size: 1.4em;
-		    margin: 1em 0;
-		    padding-left: 1.5em;
-			background: url(../images/icons/list-tick.png) left top no-repeat;
-			line-height: 1.3em;
-		}
-	}   	
-}
+	li {
+		background: url(../images/icons/list-tick-fat.png) left 0.4em no-repeat;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1.3em;
+		padding-left: 2em;
+		line-height: 1.4em;
+		margin-bottom: 0.7em;
+	}
+}	
  
 
 /* =============================================================================
@@ -564,6 +627,7 @@ button, .gform_button, .btn {
     padding: 0.3em 2em;	
 	border: 1px solid #1271a8;
 	background-color: #76b7e2;
+	font-weight: bold;
 	@include background-image(linear-gradient(top,  #76b7e2 0%,#106eb2 5%,#106eb2 75%,#145d92 75%,#145d92 100%)); 
 	@include box-shadow(0 1px 2px black);  
 
@@ -612,7 +676,7 @@ button, .gform_button, .btn {
 }
 
 .arrow-up-btn {
-    top: -4em;
+    top: -2em;
     position: absolute;
     right: 2%;
     padding-right: 1.5em;
@@ -632,9 +696,9 @@ button, .gform_button, .btn {
    ========================================================================== */
 
 .row {
-	padding: 8em 0;
+	padding: 6em 0;
 	background-repeat: no-repeat;
-	background-position: center 20%;
+	background-position: center 14%;
 
 	@include media(9) {
 		background-image: none !important;
@@ -922,10 +986,26 @@ textarea {
 }
 
 .gform_wrapper {
+	max-width: none !important;
+	width: 103% !important;
 
 	.gform_heading {
 		margin: 10px 0;
+		background: #f0f0f0;
+		border: 1px solid #bebebe;
+		padding: 1em 2em;
+		margin: 0 0 2em 0!important;
+		@include border-radius(5px);
+		@include box-sizing(border-box);
 
+		.gform_title {
+			width: auto !important;
+			color: #168fcd;
+			font-size: 2.2em;
+		}
+		.gform_description {
+
+		}
 	}
 
 	.validation_error {
@@ -933,7 +1013,7 @@ textarea {
 	}
 
 	.gform_body {
-		margin: 20px 0;
+		margin: 0;
 		font-family: Arial, Helvetica, sans-serif;
 
 		font-size: 11px;
@@ -943,11 +1023,16 @@ textarea {
 			padding: 0 !important;
 			list-style: none;
 
-			li {
+			> li {
 				padding: 0.4em 0;
 				margin: 0;
-				background: none;
-				clear: none;
+				clear: both;
+
+				&.box {
+					padding: 0.8em 2em 1em 2em;
+					margin-right: 0.8em;
+					margin-bottom: 2em;
+				}
 			}
 
 			.gfield_label {
@@ -955,6 +1040,10 @@ textarea {
 					color: #a40000;
 					padding: 0 0 0 5px;
 				}
+			}
+
+			.ginput_left, .ginput_right {
+				clear: none;
 			}
 
 			.ginput_left, .ginput_right, .ginput_full {
@@ -1003,7 +1092,14 @@ textarea {
 				 	}			 		
 			 	}
 			 	
-			 }		
+			 }
+
+			.gfield_radio {
+				input {
+					margin-left: 2px;
+					font-weight: normal;
+				}
+			}
 
 			.gfield_description {
 				font-size: 10px;

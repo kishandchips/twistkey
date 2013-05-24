@@ -3,13 +3,9 @@ body {
 	font-size: 62.5%;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
-
+	//-webkit-text-stroke: 0.25px;
 	@include media(8){
-		font-size: 58%;
-	}
-
-	@include media(5){
-		font-size: 50%;
+		font-size: 60%;
 	}
 }
 
@@ -20,11 +16,17 @@ body {
 
 #header {
 	padding: 0;
-	position: relative;
+	z-index: 400;
+	position: fixed;
+	width: 100%;
 	color: #FFF;
 	background: #000;
 	height: 10em;
 
+	@include media(11){
+		position: relative;
+	}
+	
 	@include media(8) {
 		height: auto;
 	}	
@@ -199,11 +201,21 @@ body {
 			 	&.current-post-parent > a,
 			 	&.current > a {
 			 		color: #fff;
-			 		background: #000;
 
 			 		@include media(6) {
 			 			color: #2AACE2;
 			 		}
+			 	}
+
+			 	&.current-menu-item > a,
+			 	&.current-category-ancestor > a,
+			 	&.current-page-item > a,
+			 	&.current-page-ancestor > a,
+			 	&.current-post-ancestor > a,
+			 	&.current-menu-parent > a,
+			 	&.current-post-parent > a,
+			 	&.current > a {
+			 		background: #333;
 			 	}
 			}
 		} 
@@ -211,7 +223,12 @@ body {
 }
 		
 			
-#main {}
+#main {
+	padding-top: 10em;
+	@include media(11){
+		padding-top: 0;
+	}
+}
 		
 #sidebar {}
 
@@ -338,7 +355,7 @@ body {
 	}
 
 	.navigation {
-		padding: 6.5em 0;
+		padding: 6em 0;
 		background-color: #1891cf; // Old browsers
 		@include filter-gradient(#1891cf, #1891cf, horizontal); // IE6-9 fallback on horizontal gradient
 		@include background-image(linear-gradient(left bottom,  #1891cf 0%,#1891cf 100%));
@@ -357,7 +374,6 @@ body {
 
 			&:hover {
 				background: #0172ba url(../images/buttons/down_arrow_short.png) right center no-repeat;
-				color: #000;
 			};
 		}
 	}
@@ -369,7 +385,7 @@ body {
 	.row-title {
 		font-size: 3.5em;
 		color: #0977bc;
-		margin-bottom: 0;
+		margin: 0;
 
 		@include media(4) {
 			font-size: 2.5em;
@@ -377,7 +393,6 @@ body {
 	}
 
 	.content {
-		font-weight: bold;	
 
 		@include media(4) {
 			font-size: 85%;

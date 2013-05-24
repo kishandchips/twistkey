@@ -40,28 +40,28 @@
 								<?php endif; ?>
 								<?php if($layout == 'three_columns'): ?>
 									<?php if($title) :?><h2  class="row-title text-center"><?php echo $title; ?></h2><?php endif; ?>
-									<div class="column span one-third break">
+									<div class="column span one-third break" style="<?php the_sub_field('styles_first_column'); ?>">
 										<?php the_sub_field('content_first_column'); ?>
 									</div>
-									<div class="column span one-third break">
+									<div class="column span one-third break" style="<?php the_sub_field('styles_second_column'); ?>">
 										<?php the_sub_field('content_second_column'); ?>
 									</div>
-									<div class="column span one-third break">
+									<div class="column span one-third break" style="<?php the_sub_field('styles_third_column'); ?>">
 										<?php the_sub_field('content_third_column'); ?>
 									</div>
 								<?php endif; ?>
 								<?php if($layout == 'four_columns'): ?>
 									<?php if($title) :?><h2  class="row-title text-center"><?php echo $title; ?></h2><?php endif; ?>
-									<div class="column span two-and-half break">
+									<div class="column span two-and-half break" style="<?php the_sub_field('styles_first_column'); ?>">
 										<?php the_sub_field('content_first_column'); ?>
 									</div>
-									<div class="column span two-and-half break">
+									<div class="column span two-and-half break" style="<?php the_sub_field('styles_second_column'); ?>">
 										<?php the_sub_field('content_second_column'); ?>
 									</div>
-									<div class="column span two-and-half break">
+									<div class="column span two-and-half break" style="<?php the_sub_field('styles_third_column'); ?>">
 										<?php the_sub_field('content_third_column'); ?>
 									</div>
-									<div class="column span two-and-half break">
+									<div class="column span two-and-half break" style="<?php the_sub_field('styles_fourth_column'); ?>">
 										<?php the_sub_field('content_fourth_column'); ?>
 									</div>							
 								<?php endif; ?>												

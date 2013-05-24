@@ -36,7 +36,7 @@
 					<span class="icon-bar"></span>
 				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary_header', 'menu_class' => 'nav-menu' ) ); ?>
 				</nav><!-- #site-navigation -->			
 			</div>
 		</header><!-- #masthead -->
