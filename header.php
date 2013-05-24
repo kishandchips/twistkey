@@ -12,7 +12,7 @@
 		function load_assets(){
 			wp_enqueue_style('style', get_template_directory_uri().'/css/style.css');
 
-			wp_enqueue_script('jquery', get_template_directory_uri().'/js/libs/modernizr.min.js');
+			wp_enqueue_script('modernizr', get_template_directory_uri().'/js/libs/modernizr.min.js');
 			wp_enqueue_script('jquery', get_template_directory_uri().'/js/libs/jquery.min.js');
 			wp_enqueue_script('easing', get_template_directory_uri().'/js/plugins/jquery.easing.js', array('jquery'), '', true);
 			wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '', true);
@@ -36,7 +36,7 @@
 					<span class="icon-bar"></span>
 				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary_header', 'menu_class' => 'nav-menu' ) ); ?>
 				</nav><!-- #site-navigation -->			
 			</div>
 		</header><!-- #masthead -->
