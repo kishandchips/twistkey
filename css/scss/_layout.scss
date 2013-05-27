@@ -166,6 +166,7 @@ body {
 			 		line-height: 1.4em;
 				 	color: #999;
 				 	@include border-radius(2em);
+				 	behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
 
 				 	@include media(10) {
 				 		font-size: 1.2em;
@@ -224,6 +225,17 @@ body {
 
 .svgfilters #header .logo {
 	background: url(../images/logos/header_logo.svg) left top no-repeat;
+}
+
+.no-csstransforms #header .container:after {
+	border: none !important;
+	border-style: none !important;
+	width: 514px !important;
+	height: 20px !important;
+	margin-left: 3em;
+	bottom: -19px;
+	background: url(../images/backgrounds/header_shape.png) left top no-repeat;
+	clear: none;
 }
 		
 			
@@ -375,6 +387,8 @@ body {
 			background: #09639c url(../images/buttons/down_arrow_short.png) right center no-repeat;
 			line-height: 1em;
 			margin-top: 0.5em;
+			behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+			position: relative;
 
 			&:hover {
 				background: #0172ba url(../images/buttons/down_arrow_short.png) right center no-repeat;
