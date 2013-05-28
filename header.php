@@ -3,8 +3,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />     
 	<?php 
 		function load_assets(){
 			wp_enqueue_style('style', get_template_directory_uri().'/css/style.css');
@@ -17,7 +16,11 @@
 
 		add_action('wp_enqueue_scripts', 'load_assets');
 	?>
+ 
 	<?php wp_head(); ?>
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/plugins/jQueryRotateCompressed.2.2.js"></script>
+    <![endif]--> 	
 </head>
 
 <body <?php body_class(); ?>>

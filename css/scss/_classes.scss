@@ -198,7 +198,7 @@ pre {
 	@include border-radius(3em);
 	padding: 1em 1em 0.5em;
 	width: 90%;
-	behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+	behavior: url(/wordpress/wp-content/themes/twistkey/pie/PIE.htc);
 	position: relative;
 	span {
 		line-height: 0.7em;
@@ -499,7 +499,7 @@ blockquote {
 	@include border-radius(3em);
 	position: relative;
 	margin: 5em 0 0 0;
-	behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+	behavior: url(/wordpress/wp-content/themes/twistkey/pie/PIE.htc);
 
 	&:before {
     	background: url("../images/misc/speech_bubble_right.png") no-repeat scroll left top transparent;		
@@ -632,7 +632,7 @@ button, .gform_button, .btn {
 	font-weight: bold;
 	@include background-image(linear-gradient(top,  #76b7e2 0%,#106eb2 5%,#106eb2 75%,#145d92 75%,#145d92 100%)); 
 	@include box-shadow(0 1px 2px black);  
-	behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+	behavior: url(/wordpress/wp-content/themes/twistkey/pie/PIE.htc);
 
 	&:hover {
 		background-color: #45a3e1;

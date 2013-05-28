@@ -166,7 +166,7 @@ body {
 			 		line-height: 1.4em;
 				 	color: #999;
 				 	@include border-radius(2em);
-				 	behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+				 	behavior: url(http://twistkey.com/wordpress/wp-content/themes/twistkey/pie/PIE.htc);
 
 				 	@include media(10) {
 				 		font-size: 1.2em;
@@ -387,7 +387,7 @@ body {
 			background: #09639c url(../images/buttons/down_arrow_short.png) right center no-repeat;
 			line-height: 1em;
 			margin-top: 0.5em;
-			behavior: url(/dev/twistkey/website/build/wp-content/themes/twistkey/pie/PIE.htc);
+			behavior: url(http://twistkey.com/wordpress/wp-content/themes/twistkey/pie/PIE.htc);
 			position: relative;
 
 			&:hover {

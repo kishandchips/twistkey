@@ -42,6 +42,24 @@
 		          }
 		          return false;
 		      });
+		    });	    
+
+		    $(function() {
+			    if ($.browser.msie) {
+			    	console.log('IE');
+			    	$('.twist').addClass('ie');
+					$('.trigger').hover(function() { 
+						$('#shape').addClass('rotate');
+					}, function(){
+						$('#shape').removeClass('rotate');
+					});			    	
+
+					$('.trigger').hover(function() { 
+						$('#shape').rotate({animateTo:-90})
+					}, function(){
+						$('#shape').rotate({animateTo:0})
+					});
+			    }		    	
 		    });
 
 		  	$("#template-examples .example").filter(":nth-child(even)").addClass("evenrow");
@@ -66,7 +84,7 @@
 		                }
 		            }).height(curHighest);
 		        });
-		    };	
+		    };			    
 
 			$.fn.anchorAnimate = function(settings) {
 			 	settings = jQuery.extend({
@@ -79,7 +97,11 @@
 						event.preventDefault();
 						var locationHref = window.location.href
 						var elementClick = $(caller).attr("href")			
-						var destination = $(elementClick).offset().top -120;
+						var destination = $(elementClick).offset().top -100;
+
+						if ( $(window).width() <= 1100) {
+						   var destination = $(elementClick).offset().top;					   
+						}					
 
 						$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination}, settings.speed, function() {
 							// window.location.hash = elementClick;
@@ -93,7 +115,7 @@
 
 		loaded: function(){
 			// $('.row .container').eqHeights();
-			$("a.scroll-to-btn").anchorAnimate()
+			$("a.scroll-to-btn").anchorAnimate();
 			this.setBoxSizing();
 		},
 
