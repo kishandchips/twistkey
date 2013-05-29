@@ -794,6 +794,10 @@ button, .gform_button, .btn {
 	embed, iframe, object {
 	    width: 100%;
 	}
+
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
 .break {
@@ -921,6 +925,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 	padding-top: 0.4em;		
 	width: 95%;	
 	overflow: hidden;
+	height: 36px;
 
 	select {
 		border: none;		
@@ -1032,7 +1037,7 @@ textarea {
 				clear: both;
 
 				&.box {
-					padding: 0.8em 2em 1em 2em;
+					padding: 0em 2em 1em 2em;
 					margin-right: 0.8em;
 					margin-bottom: 2em;
 				}
